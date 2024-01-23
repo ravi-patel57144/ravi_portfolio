@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b824665c-2472-4797-a6d2-c081a8ec3a94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ravi_portfolio/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ravi_portfolio/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ravi_portfolio/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ravi_portfolio/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ravi_portfolio/wsgi.py" afterDir="false" />
-    </list>
+    <list default="true" id="b824665c-2472-4797-a6d2-c081a8ec3a94" name="Changes" comment="Personal Dynamic Portfolio site" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +37,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -115,11 +109,25 @@
       <workItem from="1705721546773" duration="1921000" />
       <workItem from="1705775261320" duration="483000" />
       <workItem from="1705840000929" duration="133000" />
-      <workItem from="1706017574379" duration="9427000" />
+      <workItem from="1706017574379" duration="9796000" />
+      <workItem from="1706036819246" duration="392000" />
     </task>
+    <task id="LOCAL-00001" summary="Personal Dynamic Portfolio site">
+      <option name="closed" value="true" />
+      <created>1706036511780</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706036511780</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Personal Dynamic Portfolio site" />
+    <option name="LAST_COMMIT_MESSAGE" value="Personal Dynamic Portfolio site" />
   </component>
 </project>
