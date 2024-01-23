@@ -1,0 +1,32 @@
+{% load static %}
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<footer id="footer">
+    <div class="container">
+        <h3>{{ resource.name }}</h3>
+        <p>Let's collaborate and turn your ideas into reality. Reach out to me for exciting opportunities and innovative
+            projects.</p>
+        <div class="copyright">
+            Designed by <strong><span>{{ resource.name }}</span></strong>
+        </div>
+
+        <div class="social-links">
+            <a href="{{ resource.github_link }}" class="linkedin" target="_blank"><i
+                    class="bx bxl-github"></i></a>
+            <a href="{{ resource.linkedin_link }}" class="linkedin" target="_blank"><i
+                    class="bx bxl-linkedin"></i></a>
+            <a href="{{ resource.instagram_link }}" class="instagram" target="_blank"><i
+                    class="bx bxl-instagram"></i></a>
+            <a href="{{ resource.twitter_link }}" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+            <a href="{{ resource.skype_link }}" class="google-plus" target="_blank"><i
+                    class="bx bxl-skype"></i></a>
+        </div>
+
+        <div class="credits">
+            Creating tomorrow's solutions today
+        </div>
+    </div>
+</footer>

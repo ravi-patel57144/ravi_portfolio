@@ -1,0 +1,318 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section id="hero" class="d-flex flex-column justify-content-center">
+        <div class="container" data-aos="zoom-in" data-aos-delay="100">
+            <h1>{{ resource.name }}</h1>
+            <p>I'm a <span class="typed" data-typed-items="Engineer, Designer, Developer, Freelancer"></span></p>
+            <div class="cta-buttons">
+                <a href="mailto:ravi.patel57144@gmail.com?subject=Job%20Opportunity&body=Hi%20Ravi,%0AI%20am%20interested%20in%20discussing%20a%20potential%20job%20opportunity%20with%20you.%0A%0ARegards,%0A"
+                   class="hire-button">Hire me</a>
+                <a href="{{ resource.resume.url }}" target="_blank" class="resume-button">View Resume</a>
+            </div>
+            <div class="social-links">
+                <a href="{{ resource.github_link }}" class="linkedin" target="_blank"><i
+                        class="bx bxl-github"></i></a>
+                <a href="{{ resource.linkedin_link }}" class="linkedin" target="_blank"><i
+                        class="bx bxl-linkedin"></i></a>
+                <a href="{{ resource.instagram_link }}" class="instagram" target="_blank"><i
+                        class="bx bxl-instagram"></i></a>
+                <a href="{{ resource.twitter_link }}" class="twitter" target="_blank"><i
+                        class="bx bxl-twitter"></i></a>
+                <a href="{{ resource.skype_link }}" class="google-plus" target="_blank"><i
+                        class="bx bxl-skype"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>About</h2>
+                    <p> {{ about.description1 }} </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="{% static 'assets/img/profile-img.jpg' %}" class="img-fluid"
+                             alt="{{ resource.name }} {{ about.title }}">
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content">
+                        <h3>{{ about.title }}</h3>
+                        <p class="fst-italic">
+                            {{ about.description2 }}
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong>
+                                        <span>{{ about.birthday }}</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a
+                                            href="{{ about.website }}">{{ about.website }}</a></span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong>
+                                        <span>+91 {{ about.phone }}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong>
+                                        <span>{{ about.city }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong>
+                                        <span>{{ about.age }}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong>
+                                        <span>{{ about.education }}</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
+                                        <span>{{ about.email }}</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
+                                        <span>{{ about.freelancer }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            {{ about.description3 }}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="skills" class="skills section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Skills</h2>
+                    <p>Mastering the tools to turn ideas into reality. Here's a glimpse of my proficiency across various
+                        technologies</p>
+                </div>
+
+                <div class="row skills-content">
+                    {% for skill in skills %}
+                        <div class="col-lg-6">
+                            <div class="progress">
+                                <span class="skill">{{ skill.name }} <i class="val">{{ skill.value }}%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.value }}"
+                                         aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+        <section id="resume" class="resume">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Resume</h2>
+                    <p> Embark on a journey of exploration and innovation with me. As a dedicated computer science
+                        engineering
+                        student, I am driven to push boundaries and create impactful solutions that shape a brighter
+                        future. </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 class="resume-title">Sumary</h3>
+                        <div class="resume-item pb-0">
+                            <h4>{{ resource.name }}</h4>
+                            <p><em>{{ resume.objective }}</em></p>
+                            <ul>
+                                <li>{{ about.address }}</li>
+                                <li>+91 {{ about.phone }}</li>
+                                <li>{{ about.email }}</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="resume-title">Education</h3>
+                        {% for education in resume_education %}
+
+                            <div class="resume-item">
+                                <h4> {{ education.education_title }}</h4>
+                                <h5>{{ education.time_period }}</h5>
+                                <p><em>{{ education.time_period }}</em></p>
+                                <p>{{ education.grade }}</p>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="resume-title">Work Experience</h3>
+                        {% for experience in resume_experience %}
+
+                            <div class="resume-item">
+                                <h4>{{ experience.experience_title }}</h4>
+                                <h5>{{ experience.experience }}</h5>
+                                <p><em> {{ experience.company }}</em></p>
+                                <p><em> {{ experience.company_description }} </em></p>
+                                <ul>
+                                    <li>{{ experience.roles_and_responsibility }}
+                                    </li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+
+                        {% for resume_project in resume_project %}
+
+                            <div class="resume-item">
+                                <h4>{{ resume_project.project_title }}</h4>
+                                <h5>{{ resume_project.project_period }}</h5>
+                                <p><em> {{ resume_project.name }} </em></p>
+                                <ul>
+                                    <li>{{ resume_project.description }}</li>
+                                    {% if resume_project.project_link %}
+                                        <li>Visit:
+                                            <a href="{{ resume_project.project_link }}">{{ resume_project.project_link }}</a>
+                                            {% else %}
+                                            <span> </span>
+                                        </li>
+                                    {% endif %}
+
+                                </ul>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="projects-container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Projects</h2>
+                    <p> Experience My Remarkable Selection of Projects </p>
+                </div>
+
+                <div class="projects__content">
+                    {% for project in projects %}
+                        <div class="projects-row">
+                            <div class="projects-row-img-cont">
+                                <img src="{{ project.project_image.url }}" alt="{{ project.project_name }} Screenshot"
+                                     class="projects-row-img"
+                                     loading="lazy"/>
+                            </div>
+                            <div class="projects-row-content">
+                                <h3 class="resume-title">{{ project.project_name }}</h3>
+                                <p>{{ project.project_description }}</p>
+                                <ul>
+                                    <li>{{ project.project_bio }}</li>
+                                    <li><strong>Technologies Used:</strong> {{ project.project_technology }} </li>
+
+                                    {% if project.project_link %}
+                                        <li>
+                                            <strong>Click to Visit: </strong>
+                                            <a href="{{ project.project_link }}"
+                                               target="_blank">{{ project.project_link }}</a>
+                                            {% else %}
+                                            <span> </span>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Feel free to reach out! Whether you have a project in mind, want to collaborate, or just want to
+                        say hello,
+                        I'd love to hear from you. Please use the form below to send me a message, and I'll get back to
+                        you as soon
+                        as possible.</p>
+                </div>
+
+                <div class="row mt-1">
+
+                    <div class="col-lg-4">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Address:</h4>
+                                <p>{{ about.address }}</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>{{ about.email }}</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+91 {{ about.phone }}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 mt-5 mt-lg-0">
+
+                        <form action="{% url 'contact' %}" method="post" role="form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                           placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                           placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                       placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                          required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit">Send Message</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        {% if msg %}
+            window.alert("Your Form has been submitted Successfully!")
+        {% endif %}
+    </script>
+{% endblock %}
