@@ -13,15 +13,15 @@
                 <a href="{{ resource.resume.url }}" target="_blank" class="resume-button">View Resume</a>
             </div>
             <div class="social-links">
-                <a href="{{ resource.github_link }}" class="linkedin" target="_blank"><i
+                <a href="{{ resource.github_link }}" class="linkedin" target="_blank" aria-label="Ravi Singh Patel's GitHub"><i
                         class="bx bxl-github"></i></a>
-                <a href="{{ resource.linkedin_link }}" class="linkedin" target="_blank"><i
+                <a href="{{ resource.linkedin_link }}" class="linkedin" target="_blank" aria-label="Ravi Singh Patel's LinkedIn"><i
                         class="bx bxl-linkedin"></i></a>
-                <a href="{{ resource.instagram_link }}" class="instagram" target="_blank"><i
+                <a href="{{ resource.instagram_link }}" class="instagram" target="_blank" aria-label="Ravi Singh Patel's Instagram"><i
                         class="bx bxl-instagram"></i></a>
-                <a href="{{ resource.twitter_link }}" class="twitter" target="_blank"><i
+                <a href="{{ resource.twitter_link }}" class="twitter" target="_blank" aria-label="Ravi Singh Patel's Twitter"><i
                         class="bx bxl-twitter"></i></a>
-                <a href="{{ resource.skype_link }}" class="google-plus" target="_blank"><i
+                <a href="{{ resource.skype_link }}" class="google-plus" target="_blank" aria-label="Ravi Singh Patel's Skype"><i
                         class="bx bxl-skype"></i></a>
             </div>
         </div>
@@ -100,9 +100,10 @@
                     {% for skill in skills %}
                         <div class="col-lg-6">
                             <div class="progress">
-                                <span class="skill">{{ skill.name }} <i class="val">{{ skill.value }}%</i></span>
+                                <span class="skill" aria-label="{{ skill.name }} Progress: {{ skill.value }}%"><i
+                                        class="val">{{ skill.value }}%</i></span>
                                 <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.value }}"
+                                    <div class="progress-bar" aria-label="Ravi Singh Patel knows {{ skill.name }} {{ skill.value }} %" role="progressbar" aria-valuenow="{{ skill.value }}"
                                          aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
@@ -273,7 +274,7 @@
 
                     <div class="col-lg-8 mt-5 mt-lg-0">
 
-                        <form action="{% url 'contact' %}" method="post" role="form">
+                        <form action="{% url 'contact' %}" method="post">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6 form-group">
