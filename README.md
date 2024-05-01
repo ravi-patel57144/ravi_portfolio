@@ -10,7 +10,7 @@ to admin panel and change the data as per our requirement.
 - Javascript
 - Python Django
 
-### Pages - [Click to visit Project](https://ravisinghpatel.engineer)
+### Pages - [Click to visit Project](https://ravisinghpatel.dev)
 
 #### Home
 
